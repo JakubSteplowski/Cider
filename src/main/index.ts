@@ -74,7 +74,7 @@ ipcMain.on('playbackStateDidChange', (_event, attributes) => {
 
 ipcMain.on('nowPlayingItemDidChange', (_event, attributes) => {
     // Set Author and Title as window title
-    BrowserWindow.win.setTitle(`${(attributes != null && attributes.name != null && attributes.name.length > 0) ? (attributes.artistName + " - " + attributes.name + " - ") : ''}Cider`)
+    BrowserWindow.win.setTitle(`${(attributes != null && attributes.name != null && attributes.name.length > 0) ? (attributes.artistName + " - " + attributes.name + " | ") : ''}Cider`)
 
     CiderPlug.callPlugins('onNowPlayingItemDidChange', attributes);
 });
